@@ -1,0 +1,37 @@
+html, .container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin: 10px;
+}
+
+button{
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.dec{
+    background-color: rgb(251, 84, 84);
+}
+.dec:hover{
+    background-color: rgb(206, 65, 65);
+    color: wheat;
+}
+
+.inc{
+    background-color: rgb(114, 243, 114);
+}
+.inc:hover{
+    background-color: rgb(78, 164, 78);
+    color: wheat;
+}
