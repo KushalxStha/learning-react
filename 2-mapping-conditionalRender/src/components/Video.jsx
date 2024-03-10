@@ -1,4 +1,5 @@
 import {PropTypes} from "prop-types";
+
 export default function Video({imageId,title,channel="Unknown",verified,views,time}){
     return (
         <>
