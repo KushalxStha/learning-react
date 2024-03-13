@@ -1,0 +1,46 @@
+.App{
+    font-family: sans-serif;
+    margin: 0 100px;
+}
+
+.add{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+input{
+    margin: 10px 0;
+}
+button{
+    margin: 10px;
+}
+
+.allVideos{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.container{
+    background-color: lightgray;
+    padding: 8px;
+    border-radius: 15px;
+    margin:50px 0;
+}
+
+.image{
+    border-radius: 8px;
+}
+
+.misc,
+.cname,
+.tname{
+    margin: 5px 0px;
+}
+
+.cname,
+.misc{
+    color: rgb(108, 108, 108);
+}
