@@ -2,37 +2,56 @@ import { useState } from "react";
 import {PropTypes} from "prop-types";
 
 export default function AddVideo({addNewProp}) {
-  const initialValue=undefined;
+  const initialValue={
+    title:"",
+    views:"",
+    time:"",
+    channel:""
+  };
+
   const [videos, setVideos]=useState(initialValue);
+  const [isChecked, setIsChecked]=useState(false);
 
   function handleChange(e){
     setVideos({
       ...videos,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
+    setIsChecked(e.target.checked);
   }
 
   function handleSubmit(e){
     e.preventDefault();
+
+    // Checking if any required field is empty
+    if (!videos.title || !videos.time || !videos.channel) {
+      alert("Please fill in at least Title, Duration and Channel name.");
+      return;
+    }
     console.log(videos);
     
-    videos===undefined?null:
     addNewProp(videos);
+
     setVideos(initialValue);
+    setIsChecked(false);
   }
 
   return (
     <>
-    <div className="add">
-        <h3>Add Video Details</h3>
-        
-        <input type="text" name="title" onChange={handleChange} placeholder="Video Title"/>
-        <input type="text" name="views" onChange={handleChange} placeholder="No. of Views"/>
-        <input type="text" name="time" onChange={handleChange} placeholder="Uploaded Duration"/>
-        <input type="text" name="channel" onChange={handleChange} placeholder="Channel Name"/>
-        <div><input type="checkbox" name="verified" onChange={handleChange}/> Channel Verified </div>
+    <div>
+        <form className="add">
+          <h3>Add Video Details</h3>
+          {/* value & checked --> Is used to convert from Uncontrolled to Controlled */}
+          <input type="text" name="title" onChange={handleChange} placeholder="Video Title" value={videos.title}/>
+          <input type="text" name="views" onChange={handleChange} placeholder="No. of Views" value={videos.views}/>
+          <input type="text" name="time" onChange={handleChange} placeholder="Uploaded Duration" value={videos.time}/>
+          <input type="text" name="channel" onChange={handleChange} placeholder="Channel Name" value={videos.channel}/>
+          <div>
+          <input type="checkbox" name="verified" onChange={handleChange} checked={isChecked}/> Channel Verified 
+          </div>
 
-        <button type="submit" onClick={handleSubmit}>Submit</button>
+          <button type="submit" onClick={handleSubmit}>Submit</button>
+        </form>
     </div>
     </>
   )
