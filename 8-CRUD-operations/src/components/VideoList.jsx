@@ -1,7 +1,7 @@
 import Video from "./Video";
 import {PropTypes} from "prop-types";
 
-export default function VideoList({vdo, deleteVideo}){
+export default function VideoList({vdo, deleteVideo, editVideo}){
     return(
     <div className="allVideos">
         {vdo.map((elem)=>(
@@ -14,6 +14,7 @@ export default function VideoList({vdo, deleteVideo}){
             views={elem.views}
             time={elem.time}
             deleteVideo={deleteVideo}
+            editVideo={editVideo}
           />
         ))}
     </div>
@@ -22,5 +23,6 @@ export default function VideoList({vdo, deleteVideo}){
 
 VideoList.propTypes={
     vdo:PropTypes.array,
-    deleteVideo:PropTypes.func
+    deleteVideo:PropTypes.func,
+    editVideo:PropTypes.func
 }

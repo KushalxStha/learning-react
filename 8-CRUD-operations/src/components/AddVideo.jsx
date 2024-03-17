@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {PropTypes} from "prop-types";
 
-export default function AddVideo({addNewProp}) {
+export default function AddVideo({addNewProp, editableVideo, updateVideos}) {
   const initialValue={
     title:"",
     views:"",
@@ -29,12 +29,23 @@ export default function AddVideo({addNewProp}) {
       return;
     }
     console.log(videos);
-    
-    addNewProp(videos);
 
+    if(editableVideo){
+      updateVideos(videos);
+    }
+      
+    addNewProp(videos)
+      
     setVideos(initialValue);
     setIsChecked(false);
   }
+
+  // useEffect(()=>{
+  //   console.log("Component has been mounted.")
+  //   if(editableVideo){
+  //     setVideos(editableVideo);
+  //   }
+  // },[editableVideo]);
 
   return (
     <>
@@ -58,5 +69,7 @@ export default function AddVideo({addNewProp}) {
 }
 
 AddVideo.propTypes={
-    addNewProp: PropTypes.func
+    addNewProp: PropTypes.func,
+    editableVideo:PropTypes.array,
+    updateVideos:PropTypes.func
 }

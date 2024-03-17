@@ -1,10 +1,10 @@
 import {PropTypes} from "prop-types";
 
-export default function Video({imageId,title,channel,verified,views,time,deleteVideo}){
+export default function Video({imageId,title,channel,verified,views,time,deleteVideo,editVideo}){
     return (
         <>
         <div className="container">
-            <button className="edit">Edit</button>
+            <button className="edit" onClick={()=>editVideo(imageId)}>Edit</button>
             <button className="delete" onClick={()=> deleteVideo(imageId)} >X</button>
 
             <img src={`https://source.unsplash.com/random/250x180?sig=${imageId}`} className="image" />
@@ -28,5 +28,6 @@ Video.propTypes ={
     views:PropTypes.string,
     time:PropTypes.string,
     verified:PropTypes.bool,
-    deleteVideo:PropTypes.func
+    deleteVideo:PropTypes.func,
+    editVideo:PropTypes.func
 }
