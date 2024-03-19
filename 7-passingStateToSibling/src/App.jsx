@@ -14,6 +14,7 @@ function App() {
     <div className="App">
       <h1>Videos</h1>
       <AddVideo addNewProp={addNewFunc} />
+      {/* AddVideo --> App --> VideoList (Child-1 --> Parent --> Child-2) */}
       <VideoList vdo={vdo} />
     </div>
     </>

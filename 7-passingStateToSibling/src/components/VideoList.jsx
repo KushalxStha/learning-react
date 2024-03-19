@@ -16,9 +16,9 @@ export default function VideoList({vdo}){
           />
         ))}
     </div>
-    )
+  )
 }
 
 VideoList.propTypes={
-    vdo:PropTypes.array
+  vdo:PropTypes.array
 }
