@@ -1,9 +1,11 @@
-import Counter from "./components/Counter"
+// import Counter from "./components/Counter"
+import BgChanger from "./components/BgChanger"
 
 function App() {
   return (
     <>
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      <BgChanger></BgChanger>
     </>
   )
 }
