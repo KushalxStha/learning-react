@@ -12,6 +12,8 @@ function InputBox({
     className = ""}) {
 
     const amountInputId=useId()
+    // useId is used to generate unique IDs for HTML form elements, 
+    // connect HTML elements, and when using functional components.
 
     return (
     <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
@@ -41,13 +43,15 @@ function InputBox({
           disabled={currencyDisable}
           value={selectCurrency} 
           onChange={(e)=>onCurrencyChange &&
-            onCurrencyChange(Number(e.target.value))}
+            onCurrencyChange(e.target.value)}
         >
           {currencyOptions.map((currency)=>(
-            <option 
+            <option
+            // Key attribute helps to identify which items have changed, added, or removed
               key={currency} 
-              value={currency}>
-                {currency}
+              value={currency}
+            >
+              {currency}
             </option>
           ))}
         </select>
