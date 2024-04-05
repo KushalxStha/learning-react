@@ -1,0 +1,34 @@
+.App {
+  font-family: sans-serif;
+  /* text-align: center; */
+  margin: 0 20px;
+}
+
+.allVideos {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.container {
+  max-width: 250px;
+  background-color: lightgray;
+  border-radius: 15px;
+  padding: 8px;
+  margin: 20px;
+}
+
+.image {
+  border-radius: 8px;
+}
+
+.misc,
+.cname,
+.tname {
+  margin: 5px 0px;
+}
+
+.cname,
+.misc {
+  color: rgb(108, 108, 108);
+}
